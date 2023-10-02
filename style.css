@@ -1,0 +1,438 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    height: 145px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 150px;
+    gap: 50px;
+    position: fixed;
+    z-index: 99; /* to get nav above the video*/
+}
+
+#cursur{
+    height: 15px;
+    width: 15px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    z-index: 99;
+    position: fixed;
+}
+
+#cursur-blur{
+    height: 400px;
+    width: 400px;
+    background-color: #acc4713c;
+    border-radius: 50%;
+    /* z-index: 99; */
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
+}
+
+#nav img{
+    height: 75px;
+}
+#nav h4{
+    text-transform: uppercase;    /*To convert lowercase h4's in the nav to uppercase*/
+    font-weight: 500;   /*To reduce boldness of the font written in nav -> h4 */
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgb(0, 0, 0,0.45);
+}
+#page1{
+    height: 100vh;  /*height given in vh means view port -> jitni screen visible hai utni height milengi*/
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 120px;
+    font-weight: 800;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT.DRINK.PLAY.";
+    position: absolute;
+    color: #000;
+    top: -6px;  /*we use this to get shadow type trasition in h1 tag of the page1 */
+    left: -6px;  /*it use to shift left by -4px*/
+    -webkit-text-stroke: 2px #95C11E;   /*shadow vala transition  lane ke liye webkit text stroke use kiya hai*/
+    z-index: -1;
+}
+
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#page1 p{
+    font-size: 22px;
+    font-weight: 500;
+    width: 40%;
+}
+
+#page2{
+    min-height: 100vh;  /*height view port use kiya kyu ki agar % mai height dete to result nahi dikhta kyu ki parent ko height width set nahi hai*/
+    width: 100%;
+    z-index: 10;
+}
+
+
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 70px;
+    font-weight: 700;
+    font-family: gilroy;
+    margin-right: 10px;
+    transition: all linear 0.5s;
+    -webkit-text-stroke: 2px #95C11E;
+    color: transparent;
+}
+
+#scroller h4:hover{
+    color: #95C11E;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 9;
+    padding: 0 50px;
+}
+
+#about-us img{
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us-in{
+    width: 40%;
+    text-align: center;
+}
+
+#about-us-in h3{
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+#about-us-in p{
+    font-size: 20px;
+    line-height: 26px;
+}
+
+
+#cards-container{
+    /* background-color: red; */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+
+
+.card{
+    height: 80%;
+    width: 26%;
+    /* background-color: blue; */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 100px 15px 100px 5px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+.overlay h4{
+    color: #000;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.overlay p{
+    color: #000;
+    font-size: 18px;
+}
+
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+#green-div{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(14, 121, 14, 0.877),lightgreen);
+}
+
+#green-div h4{
+    width: 43%;
+    font-size: 23px;
+    text-transform: uppercase;
+    line-height: 33px;
+    text-align: center;
+}
+
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: #000;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3>p{
+    font-size: 35px;
+    font-weight: 700;
+    width: 60%;
+    text-align: center;
+    line-height: 45px;
+}
+
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+
+#page3 #colon1{
+    left: 15%;
+    top: 25%;
+}
+
+#page3 #colon2{
+    bottom: 30%;
+    right: 15%;
+}
+
+#page4{
+    height: 50vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+}
+
+.elem{
+    height: 50%;
+    width: 30%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 800;
+    position: absolute;
+    transition: all ease 0.5s;
+    z-index: 10;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.elem:hover h2{
+    color: #fff;
+    background-color: transparent;
+}
+
+#page4 h1{
+    font-size: 100px;
+    position: absolute;
+    top: -12%;
+    font-weight: 900;
+    color: #000;
+    font-family: gilroy;
+    -webkit-text-stroke: 2px #fff;
+}
+
+
+
+
+
+#footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    padding: 0 100px;
+  }
+  #footer > img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+  }
+  #f1 img {
+    height: 100px;
+  }
+  #f1,
+  #f2,
+  #f3,
+  #f4 {
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+    /* background-color: red; */
+  }
+  #f2 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  
+  #f3 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  #f4 h4 {
+    font-size: 1vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
